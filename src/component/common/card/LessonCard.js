@@ -20,53 +20,67 @@ class LessonCard extends React.Component<Props> {
     render() {
         const { lesson } = this.props;
         return (
-            <FlipCard
-                frontBackgroundColor="#B96aC9"
-                backBackgroundColor="#231b1b">
-                <Container>
-                    <Image src={lesson.imageSrc} />
-                    <Text>
-                        <Title>{lesson.title}</Title>
-                        <Description>{lesson.shortDescription}</Description>
-                    </Text>
-                    <button ref='flipper'>Flip me</button>
-                </Container>
-                <div>
-                    <p>{lesson.longDescription}</p>
-                    <button ref='flipper'>Flip me</button>
-                    {/* <StyledLink as={Button}>Go to Lesson</StyledLink> */}
-                </div>
+            <LessonCardContainer>
+                <FlipCard
+                    frontBackgroundColor="#B96aC9"
+                    backBackgroundColor="#231b1b"
+                    frontContainerStyle={ContainerStyle}
+                    backContainerStyle={{...ContainerStyle, ...BackContainerStyle}}
+                    frontContentStyle={FrontContentStyle}>
+                    <FrontContainer>
+                        <Image src={lesson.imageSrc} />
+                        <Text>
+                            <Title>{lesson.title}</Title>
+                            <Description>{lesson.shortDescription}</Description>
+                        </Text>
+                        <button ref='flipper'>Flip me</button>
+                    </FrontContainer>
+                    <div>
+                        <p>{lesson.longDescription}</p>
+                        <button ref='flipper'>Flip me</button>
+                        {/* <StyledLink as={Button}>Go to Lesson</StyledLink> */}
+                    </div>
+                    
                 
-            
-            </FlipCard>
+                </FlipCard>
+            </LessonCardContainer>
         );
     }
 }
 
-const Container = styled.div`
-border: 2px solid red;
-    background-color: ${lighten(0.3, Color.martinique)};
+const ContainerStyle = {
+    backgroundColor: `${lighten(0.3, Color.martinique)}`,
+    boxShadow: `black 5px 5px`,
+    maxHeight: 500,
+    maxWidth: 600,
+    padding: 18,
+    borderRadius: 8
+
+};
+
+const ContentStyle = {
+
+}
+
+const BackContainerStyle = {
+    overflow: 'auto'
+};
+
+const FrontContentStyle = {
+    height: '100%'
+};
+
+const LessonCardContainer = styled.div`
+
+`;
+
+const FrontContainer = styled.div`
     color: white;
     font-weight: bold;
-    line-height: 
-
-    border-radius: 6px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    box-shadow: ${Color.mediumGray} 5px 5px;
-
-    max-width: 620px;
-    padding: 18px;
-
-    ${media.tablet`
-        max-width: 420px;
-    `}
-
-    ${media.mobile`
-        max-width: 320px;
-    `}
 `;
 
 const Image = styled.img`

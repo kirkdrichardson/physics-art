@@ -14,11 +14,11 @@ type Props = {
   flipperID?: string,
   children: React.Element<'div'>[],
   frontBackgroundColor?: string,
-  frontContainerStyle?: {||},
-  frontContentStyle?: {||},
+  frontContainerStyle?: {[string]: any},
+  frontContentStyle?: {[string]: any},
   backBackgroundColor?: string,
-  backContainerStyle?: {||},
-  backContentStyle?: {||},
+  backContainerStyle?: {[string]: any},
+  backContentStyle?: {[string]: any},
 }
 
 
