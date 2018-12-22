@@ -14,6 +14,7 @@ const colors: {[color_property: string]: string} = {
   martinique: '#3D3A57',
 
   white: '#fafafa',
+  lightGray: '#fff',
   mediumGray: '#eee',
   darkGray: '#4C5760',
   darkGrayDesaturated: '#222',
