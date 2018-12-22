@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import styled, {css} from 'styled-components';
-import { lighten } from 'polished';
+import { lighten, saturate } from 'polished';
 // import { Link } from 'react-router-dom';
 
 import FlipCard from 'component/common/card/FlipCard';
@@ -20,37 +20,37 @@ class LessonCard extends React.Component<Props> {
     render() {
         const { lesson } = this.props;
         return (
-            <LessonCardContainer>
-                <FlipCard
-                    frontBackgroundColor="#B96aC9"
-                    backBackgroundColor="#231b1b"
-                    frontContainerStyle={ContainerStyle}
-                    backContainerStyle={{...ContainerStyle, ...BackContainerStyle}}
-                    frontContentStyle={FrontContentStyle}>
-                    <FrontContainer>
-                        <Image src={lesson.imageSrc} />
-                        <Text>
-                            <Title>{lesson.title}</Title>
-                            <Description>{lesson.shortDescription}</Description>
-                        </Text>
-                        <button ref='flipper'>Flip me</button>
-                    </FrontContainer>
-                    <div>
-                        <p>{lesson.longDescription}</p>
-                        <button ref='flipper'>Flip me</button>
-                        {/* <StyledLink as={Button}>Go to Lesson</StyledLink> */}
-                    </div>
-                    
+            <FlipCard
+                frontBackgroundColor="#B96aC9"
+                backBackgroundColor="#231b1b"
+                frontContainerStyle={ContainerStyle}
+                backContainerStyle={{...ContainerStyle, ...BackContainerStyle}}
+                frontContentStyle={{...ContentStyle, ...FrontContentStyle}}
+                backContentStyle={{...ContentStyle, ...BackContentStyle}}>
+
+                <FrontContainer>
+                    <Image src={lesson.imageSrc} />
+                    <Text>
+                        <Title>{lesson.title}</Title>
+                        <Description>{lesson.shortDescription}</Description>
+                    </Text>
+                    <button ref='flipper'>Flip me</button>
+                </FrontContainer>
+                <div>
+                    <p>{lesson.longDescription}</p>
+                    <button ref='flipper'>Flip me</button>
+                    {/* <StyledLink as={Button}>Go to Lesson</StyledLink> */}
+                </div>
                 
-                </FlipCard>
-            </LessonCardContainer>
+            
+            </FlipCard>
         );
     }
 }
 
 const ContainerStyle = {
-    backgroundColor: `${lighten(0.3, Color.martinique)}`,
-    boxShadow: `black 5px 5px`,
+    backgroundColor: `${saturate(0.1, Color.martinique)}`,
+    boxShadow: `${lighten(0.5, Color.darkGray)} 6px 6px 8px`,
     maxHeight: 500,
     maxWidth: 600,
     padding: 18,
@@ -59,8 +59,13 @@ const ContainerStyle = {
 };
 
 const ContentStyle = {
-
-}
+    color: 'white',
+    fontWeight: 'bold',
+    display: 'flex',
+    flexFlow: 'column nowrap',
+    justifyContent: 'center',
+    alignItems: 'center'
+};
 
 const BackContainerStyle = {
     overflow: 'auto'
@@ -70,17 +75,13 @@ const FrontContentStyle = {
     height: '100%'
 };
 
-const LessonCardContainer = styled.div`
+const BackContentStyle = {
 
-`;
+};
+
 
 const FrontContainer = styled.div`
-    color: white;
-    font-weight: bold;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+
 `;
 
 const Image = styled.img`
