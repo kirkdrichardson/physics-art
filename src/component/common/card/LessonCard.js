@@ -6,6 +6,7 @@ import { lighten, saturate } from 'polished';
 // import { Link } from 'react-router-dom';
 
 import FlipCard from 'component/common/card/FlipCard';
+import { Button } from 'common/styled/exports';
 
 import { media } from 'common/Breakpoints';
 // import {web, tablet, mobile} from 'common/Style';
@@ -21,8 +22,6 @@ class LessonCard extends React.Component<Props> {
         const { lesson } = this.props;
         return (
             <FlipCard
-                frontBackgroundColor="#B96aC9"
-                backBackgroundColor="#231b1b"
                 frontContainerStyle={ContainerStyle}
                 backContainerStyle={{...ContainerStyle, ...BackContainerStyle}}
                 frontContentStyle={{...ContentStyle, ...FrontContentStyle}}
@@ -34,11 +33,11 @@ class LessonCard extends React.Component<Props> {
                         <Title>{lesson.title}</Title>
                         <Description>{lesson.shortDescription}</Description>
                     </Text>
-                    <button ref='flipper'>Flip me</button>
+                    <Button ref='flipper'>Flip me</Button>
                 </FrontContainer>
                 <div>
                     <p>{lesson.longDescription}</p>
-                    <button ref='flipper'>Flip me</button>
+                    <Button ref='flipper'>Flip me</Button>
                     {/* <StyledLink as={Button}>Go to Lesson</StyledLink> */}
                 </div>
                 
@@ -49,10 +48,10 @@ class LessonCard extends React.Component<Props> {
 }
 
 const ContainerStyle = {
-    backgroundColor: `${saturate(0.1, Color.martinique)}`,
+    backgroundColor: `${Color.secondary}`,
     boxShadow: `${lighten(0.5, Color.darkGray)} 6px 6px 8px`,
-    maxHeight: 500,
-    maxWidth: 600,
+    maxHeight: 360,
+    maxWidth: 260,
     padding: 18,
     borderRadius: 8
 

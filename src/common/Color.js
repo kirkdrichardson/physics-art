@@ -1,6 +1,10 @@
 // @flow
 
-import { desaturate, lighten } from 'polished';
+import {
+  desaturate,
+  lighten,
+  adjustHue
+} from 'polished';
 
 // https://flow.org/en/docs/types/objects/#toc-objects-as-maps
 
@@ -18,6 +22,14 @@ const colors: {[color_property: string]: string} = {
   mediumGray: '#eee',
   darkGray: '#4C5760',
   darkGrayDesaturated: '#222',
+
+  get primary() {
+    return this.martinique
+  },
+
+  get secondary() {
+    return adjustHue(100, this.martinique);
+  },
 
   get headerBg() {
     return desaturate(0.1, this.martinique);

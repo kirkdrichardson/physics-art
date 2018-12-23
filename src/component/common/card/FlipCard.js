@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 // Adapted from https://github.com/medelman17/Flexy-Flip-Cards
@@ -13,10 +12,8 @@ type State = {
 type Props = {
   flipperID?: string,
   children: React.Element<'div'>[],
-  frontBackgroundColor?: string,
   frontContainerStyle?: {[string]: any},
   frontContentStyle?: {[string]: any},
-  backBackgroundColor?: string,
   backContainerStyle?: {[string]: any},
   backContentStyle?: {[string]: any},
 }
@@ -82,7 +79,6 @@ class Card extends React.Component<Props, State> {
         child on the front of the card and the second child on the back. */}
         <CardSide
           cardRotation={this.state.isCardFlipped ? '180deg' : '0deg'}
-          backgroundColor={this.props.frontBackgroundColor || '#1097FF'}
           containerStyle={this.props.frontContainerStyle || { }}
           contentStyle={this.props.frontContentStyle || { }}
         >
@@ -90,7 +86,6 @@ class Card extends React.Component<Props, State> {
         </CardSide>
         <CardSide
           cardRotation={this.state.isCardFlipped ? '0deg' : '-180deg' }
-          backgroundColor={this.props.backBackgroundColor || '##FF851B'}
           containerStyle={this.props.backContainerStyle || { }}
           contentStyle={this.props.backContentStyle || { }}
         >
@@ -108,7 +103,7 @@ const CardSideWrapper = styled.div`
   bottom: 0;
   height: 100%;
   width: 100%;
-  background: ${props => props.backgroundColor ? props.backgroundColor : '#fff' };
+  background: '#fff';
   overflow: hidden;
   @-moz-document url-prefix() {
     overflow: visible;
@@ -123,7 +118,6 @@ const CardSideWrapper = styled.div`
 
 
 type CardSideProps = {
-  backgroundColor: string, 
   contentStyle: {||},
   containerStyle: {||},
   cardRotation: string,
@@ -134,14 +128,12 @@ const CardSide = (props) => {
   const { 
     children, 
     cardRotation, 
-    backgroundColor,
     containerStyle,
     contentStyle,
    } = props; 
 
    return (
       <CardSideWrapper 
-        backgroundColor={backgroundColor}
         style={containerStyle}
         cardRotation={cardRotation}
       >
