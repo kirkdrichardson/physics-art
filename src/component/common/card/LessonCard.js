@@ -50,10 +50,12 @@ class LessonCard extends React.Component<Props> {
 const ContainerStyle = {
     backgroundColor: `${Color.secondary}`,
     boxShadow: `${lighten(0.5, Color.darkGray)} 6px 6px 8px`,
-    maxHeight: 360,
-    maxWidth: 260,
+    maxHeight: 400,
+    maxWidth: 600,
     padding: 18,
-    borderRadius: 8
+    borderRadius: 8,
+    marginRight: 20
+
 
 };
 
@@ -63,7 +65,7 @@ const ContentStyle = {
     display: 'flex',
     flexFlow: 'column nowrap',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 };
 
 const BackContainerStyle = {
