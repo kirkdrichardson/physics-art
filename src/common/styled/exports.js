@@ -15,4 +15,6 @@ export const Button = styled.button`
 export const CardContainer = styled.div`
     display: flex;
     flex-flow: row wrap;
+    width: 100%;
+    border: 1px solid red;
 `;

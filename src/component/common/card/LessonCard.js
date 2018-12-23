@@ -28,7 +28,9 @@ class LessonCard extends React.Component<Props> {
                 backContentStyle={{...ContentStyle, ...BackContentStyle}}>
 
                 <FrontContainer>
-                    <Image src={lesson.imageSrc} />
+                    <ImageContainer>
+                        <Image src={lesson.imageSrc} />
+                    </ImageContainer>
                     <Text>
                         <Title>{lesson.title}</Title>
                         <Description>{lesson.shortDescription}</Description>
@@ -50,13 +52,11 @@ class LessonCard extends React.Component<Props> {
 const ContainerStyle = {
     backgroundColor: `${Color.secondary}`,
     boxShadow: `${lighten(0.5, Color.darkGray)} 6px 6px 8px`,
-    maxHeight: 400,
-    maxWidth: 600,
     padding: 18,
     borderRadius: 8,
-    marginRight: 20
-
-
+    marginRight: 20,
+    width: 300,
+    height: 400
 };
 
 const ContentStyle = {
@@ -85,12 +85,25 @@ const FrontContainer = styled.div`
 
 `;
 
+const imageHeight = 200;
+
+const ImageContainer = styled.image`
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    height: ${imageHeight}px;
+`;
+
 const Image = styled.img`
     background: ${Color.darkGrey};
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
 `;
 
 const Text = styled.div`
-
+    margin-top: ${imageHeight + 20}px;
 `;
 
 const Title = styled.h3`
