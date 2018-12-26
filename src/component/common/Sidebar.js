@@ -159,6 +159,9 @@ const StyledList = styled.ul`
     flex: 1;
 `;
 
+const lightText = '#fff';
+const darkenedText = darken(0.3, lightText);
+
 const SidebarListItemWrapper = styled.li`
     color: ${lightText};
     font-size: 24px;
@@ -172,8 +175,6 @@ const Divider = styled.div`
     margin: 18px 0;
 `;
 
-const lightText = '#fff';
-const darkenedText = darken(0.3, lightText);
 
 const StyledLink = styled(Link)`
     display: flex;
