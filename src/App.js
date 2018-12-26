@@ -87,7 +87,7 @@ type State = {
 }
 
 
-class App extends React.Component<{}, State> {
+class App extends React.Component<RouterProps, State> {
   state = {
     screenWidth: 1600,
     screenHeight: 900,
@@ -141,7 +141,7 @@ class App extends React.Component<{}, State> {
 
     return (
         <AppContainer>
-            <Header routes={routes} />
+            <Header routes={routes} {...this.props} />
             <MainContent>
               <Page>
                 <Switch>

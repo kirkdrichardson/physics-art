@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Sidebar from '../src/component/common/Sidebar';
 
 declare type RouterProps = {
     match: any,
