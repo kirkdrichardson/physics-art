@@ -11,6 +11,22 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 

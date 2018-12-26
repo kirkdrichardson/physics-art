@@ -16,7 +16,7 @@ class Home extends React.Component<Props> {
     render() {
         return (
             <div>
-                <h1>Home</h1>
+                <h1 style={{fontSize: '3rem'}}>Home</h1>
                 <CardContainer>
                         <Image src={'https://picsum.photos/200/300'} />
 

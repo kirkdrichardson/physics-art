@@ -21,6 +21,9 @@ class Header extends React.Component<Props> {
                 <SidebarWrapper>
                     <Sidebar routes={this.props.routes} />
                 </SidebarWrapper>
+                <TitleWrapper>
+                    <Title>Physics Art</Title>
+                </TitleWrapper>
             </HeaderWrapper>
         );
     }
@@ -52,8 +55,27 @@ const HeaderWrapper = styled.div`
 `;
 
 const SidebarWrapper = styled.div`
-    margin-right: auto;
-    margin-left: 20px;
+    position: absolute;
+    left: 1rem;
+    z-index: 999;
+`;
+
+const TitleWrapper = styled.div`
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    width: 100%;
+    height: 100%;
+`;
+
+
+const Title = styled.h1`
+    font-size: 2.1rem;
+    color: white;
+    margin: 0 1.5rem;
 `;
 
 

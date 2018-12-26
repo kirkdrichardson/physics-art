@@ -103,10 +103,11 @@ const Button = styled.button`
     background: transparent;
     margin: 0;
     border: 0;
+    padding: 0;
 `;
 
 const TriggerIcon = styled.i`
-    font-size: 50px;
+    font-size: 3rem;
     color: ${Color.white};
 
     :hover {
