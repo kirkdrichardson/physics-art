@@ -9,6 +9,7 @@ import Shapes from 'component/shapes/Shapes';
 import Color from 'component/color/Color';
 import Motion from 'component/motion/Motion';
 import Systems from 'component/systems/Systems';
+import Test from 'component/test/Test';
 import NoMatchingRoute from 'component/error/NoMatchingRoute';
 
 // import styled from 'styled-components';
@@ -70,6 +71,15 @@ const routes: RouteType[] = [
         name: 'Systems',
         icon: 'grain'
       }
+  },
+  {
+    path: '/test',
+    component: Test,
+    exact: true,
+    sidebar: {
+      name: 'Systems',
+      icon: 'test'
+    }
   }
 ];
 

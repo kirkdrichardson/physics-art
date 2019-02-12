@@ -5,7 +5,6 @@ import Color from 'common/Color';
 import {web, tablet, mobile} from 'common/Style';
 import { media } from 'common/Breakpoints';
 
-
 export const DeviceEnums: {[DeviceEnumType]: DeviceEnumType} = {
   DESKTOP: 'DESKTOP',
   TABLET: 'TABLET',
