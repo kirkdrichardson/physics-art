@@ -1,15 +1,17 @@
 // @flow
 import styled from 'styled-components';
 
+import type { DeviceEnumType } from 'device';
+
 import Color from 'common/Color';
-import {web, tablet, mobile} from 'common/Style';
+import { web, tablet, mobile } from 'common/Style';
 import { media } from 'common/Breakpoints';
 
 
 export const DeviceEnums: {[DeviceEnumType]: DeviceEnumType} = {
   DESKTOP: 'DESKTOP',
   TABLET: 'TABLET',
-  MOBILE: 'MOBILE'
+  MOBILE: 'MOBILE',
 };
 
 
