@@ -9,7 +9,6 @@ import App from './App';
 
 class AppDelegate extends React.Component<RouterProps> {
     render() {
-        console.log(this.props);
 
         return (
             <App {...this.props} />      

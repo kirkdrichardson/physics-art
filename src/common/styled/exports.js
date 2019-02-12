@@ -12,9 +12,27 @@ export const Button = styled.button`
     `}
 `;
 
+
 export const CardContainer = styled.div`
     display: flex;
+    max-height: 400px;
+    max-width: 600px;
     flex-flow: row wrap;
-    width: 100%;
     border: 1px solid red;
+
+    ${props => props.secondary && css`
+        max-width: 400px;
+        max-height: 200px;
+    `}
+
+    ${props => props.tertiary && css`
+    max-width: 200px;
+    max-height: 100px;
+`}
+
+    background: purple;
+`;
+
+export const Header = styled.h1`
+    font-size: 3rem;
 `;
