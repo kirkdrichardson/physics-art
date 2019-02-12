@@ -6,22 +6,32 @@
 import * as React from 'react';
 // import styled from 'styled-components';
 
+// Generic Wrapper declared in exports
 import { AlertBox } from 'common/styled/exports';
 
 type Props = RouterProps & {
   routes: RouteType[],
   title: string,
-  type: danger | success | warning
-  text: string,
+  type: AlertEnumType,
+  text: string
 };
+
+// stateless componenet handler declared
+// const SidebarListItem = ({title, type, text}: SidebarListItemParams): React.Node => (
+
+// ))
 
 class Alert extends React.Component<Props> {
     render() {
         return (
-          <AlertBox />
+            <AlertBox {...Props.type}>
+                <h6>{Props.title}</h6>
+                <p>{Props.text}</p>
+            </AlertBox>
         );
     }
 }
+
 
 
 // const HeaderWrapper = styled.div`
