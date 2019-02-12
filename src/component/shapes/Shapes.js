@@ -4,14 +4,12 @@ import * as React from 'react';
 
 type Props = {||};
 
-class Shapes extends React.Component<Props> {
-    render() {
+function Shapes(props: Props) {
         return (
             <div>
                 Shapes
             </div>
         );
-    }
 }
 
 export default Shapes;

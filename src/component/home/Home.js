@@ -12,17 +12,14 @@ import { Header } from 'common/styled/exports';
 
 type Props = {||};
 
-class Home extends React.Component<Props> {
-    render() {
-        return (
-            <div>
-                <Header>Home</Header>
+function Home(props: Props) {
+    return (
+        <div>
+            <Header>Home</Header>
 
-            </div>
-        );
-    }
+        </div>
+    );
 }
-
 
 // const ImageContainer = styled.div`
 

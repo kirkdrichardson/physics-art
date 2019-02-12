@@ -7,13 +7,10 @@ import App from './App';
 
 // TODO - add additional auth logic
 
-class AppDelegate extends React.Component<RouterProps> {
-    render() {
-
-        return (
-            <App {...this.props} />      
-        );
-    }
+function AppDelegate(props: RouterProps) {
+    return (
+        <App {...props} />      
+    );
 }
 
 export default withRouter(AppDelegate);

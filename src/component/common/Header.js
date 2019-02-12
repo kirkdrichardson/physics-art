@@ -13,20 +13,17 @@ type Props = RouterProps & {
     routes: RouteType[]
 };
 
-
-class Header extends React.Component<Props> {
-    render() {
-        return (
-            <HeaderWrapper>
-                <SidebarWrapper>
-                    <Sidebar {...this.props} />
-                </SidebarWrapper>
-                <TitleWrapper>
-                    <Title>Physics Art</Title>
-                </TitleWrapper>
-            </HeaderWrapper>
-        );
-    }
+function Header(props: Props) {
+    return (
+        <HeaderWrapper>
+            <SidebarWrapper>
+                <Sidebar {...props} />
+            </SidebarWrapper>
+            <TitleWrapper>
+                <Title>Physics Art</Title>
+            </TitleWrapper>
+        </HeaderWrapper>
+    );
 }
 
 
