@@ -9,7 +9,7 @@ import {web, tablet, mobile} from 'common/Style';
 import { media } from 'common/Breakpoints';
 import Color from 'common/Color';
 
-type Props = {
+type Props = RouterProps & {
     routes: RouteType[]
 };
 
@@ -19,8 +19,11 @@ class Header extends React.Component<Props> {
         return (
             <HeaderWrapper>
                 <SidebarWrapper>
-                    <Sidebar routes={this.props.routes} />
+                    <Sidebar {...this.props} />
                 </SidebarWrapper>
+                <TitleWrapper>
+                    <Title>Physics Art</Title>
+                </TitleWrapper>
             </HeaderWrapper>
         );
     }
@@ -52,8 +55,26 @@ const HeaderWrapper = styled.div`
 `;
 
 const SidebarWrapper = styled.div`
-    margin-right: auto;
-    margin-left: 20px;
+    position: absolute;
+    left: 1rem;
+    z-index: 999;
+`;
+
+const TitleWrapper = styled.div`
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+`;
+
+
+const Title = styled.h1`
+    font-size: 2.1rem;
+    color: ${Color.invertedText};
+    margin: 0 1.5rem;
 `;
 
 

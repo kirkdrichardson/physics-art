@@ -12,14 +12,46 @@ export const Button = styled.button`
     `}
 `;
 
+
 export const CardContainer = styled.div`
     display: flex;
+    max-height: 400px;
+    max-width: 600px;
     flex-flow: row wrap;
+    border: 1px solid red;
+
+    ${props => props.secondary && css`
+        max-width: 400px;
+        max-height: 200px;
+    `}
+
+    ${props => props.tertiary && css`
+    max-width: 200px;
+    max-height: 100px;
+`}
+
+    background: purple;
 `;
 
-export const AlertContainer = styled.div`
+export const Header = styled.h1`
+    font-size: 3rem;
+`;
+
+export const AlertBox = styled.div`
   border-radius: 4px;
-  background-color: red;
-  width: 20px;
-  height: 20px;
+  background-color: white;
+  width: 100%;
+  height: 50px;
+
+  ${props => props.error && css`
+    border: 1px solid red;
+  `}
+
+  ${props => props.success && css`
+    border: 1px solid green;
+  `}
+
+  ${props => props.warning && css`
+    border: 1px solid yellow;
+  `}
 `;

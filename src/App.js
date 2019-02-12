@@ -10,6 +10,7 @@ import Color from 'component/color/Color';
 import Motion from 'component/motion/Motion';
 import Systems from 'component/systems/Systems';
 import Test from 'component/test/Test';
+import Numbers from 'component/number/Numbers';
 import NoMatchingRoute from 'component/error/NoMatchingRoute';
 
 // import styled from 'styled-components';
@@ -37,21 +38,21 @@ const routes: RouteType[] = [
       }
   },
   {
+    path: '/color',
+    component: Color,
+    exact: true,
+    sidebar: {
+      name: 'Color',
+      icon: 'palette'
+    }
+},
+  {
       path: '/shapes',
       component: Shapes,
       exact: true,
       sidebar: {
         name: 'Shapes',
         icon: 'category'
-      }
-  },
-  {
-      path: '/color',
-      component: Color,
-      exact: true,
-      sidebar: {
-        name: 'Color',
-        icon: 'palette'
       }
   },
   {
@@ -71,6 +72,15 @@ const routes: RouteType[] = [
         name: 'Systems',
         icon: 'grain'
       }
+  },
+  {
+    path: '/numbers',
+    component: Numbers,
+    exact: true,
+    sidebar: {
+      name: 'Numbers',
+      icon: 'all_inclusive'
+    }
   },
   {
     path: '/test',
@@ -97,7 +107,7 @@ type State = {
 }
 
 
-class App extends React.Component<{}, State> {
+class App extends React.Component<RouterProps, State> {
   state = {
     screenWidth: 1600,
     screenHeight: 900,
@@ -151,7 +161,7 @@ class App extends React.Component<{}, State> {
 
     return (
         <AppContainer>
-            <Header routes={routes} />
+            <Header routes={routes} {...this.props} />
             <MainContent>
               <Page>
                 <Switch>

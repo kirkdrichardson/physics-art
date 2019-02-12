@@ -1,6 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
+import { darken } from 'polished';
 import styled, {css} from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ import {web, tablet, mobile} from 'common/Style';
 import Color from 'common/Color';
 
 
-type Props = {
+type Props = RouterProps & {
     routes: RouteType[]
 };
 
@@ -18,9 +19,15 @@ type State = {
     displayOverlay: boolean
 };
 
-const SidebarListItem = ({path, data}: {path: string, data: SidebarDataType}): React.Node => (
+type SidebarListItemParams = {
+    path: string,
+    data: SidebarDataType,
+    active: boolean
+};
+
+const SidebarListItem = ({path, data, active}: SidebarListItemParams): React.Node => (
     <SidebarListItemWrapper>
-        <StyledLink to={path}>
+        <StyledLink to={path} active={active ? 1 : 0}>
             <SidebarIcon className='material-icons'>{data.icon}</SidebarIcon>
             <span>{data.name}</span>
         </StyledLink>
@@ -37,7 +44,7 @@ class Sidebar extends React.Component<Props, State> {
     };
 
     // add an event listener to autoclose sidebar when the sidebar is open
-    componentDidUpdate(_: {}, prevState: State) {
+    componentDidUpdate(_: Props, prevState: State) {
         if (prevState.open !== this.state.open) {
             if (this.state.open) {
                 document.addEventListener('click', this.closeSidebar);
@@ -85,10 +92,10 @@ class Sidebar extends React.Component<Props, State> {
                 <SidebarWrapper open={open}>
                     <StyledList>
                         {this.props.routes.map(route =>
-                            <React.Fragment key={route.path}>
-                                <SidebarListItem path={route.path} data={route.sidebar} />
-                                { route.path === '/' && <Divider />}
-                            </React.Fragment>
+                                <React.Fragment key={route.path}>
+                                    <SidebarListItem path={route.path} data={route.sidebar} active={route.path === this.props.location.pathname} />
+                                    { route.path === '/' && <Divider />}
+                                </React.Fragment>
                         )}
                     </StyledList>
                 </SidebarWrapper>
@@ -103,10 +110,11 @@ const Button = styled.button`
     background: transparent;
     margin: 0;
     border: 0;
+    padding: 0;
 `;
 
 const TriggerIcon = styled.i`
-    font-size: 50px;
+    font-size: 3rem;
     color: ${Color.white};
 
     :hover {
@@ -151,8 +159,11 @@ const StyledList = styled.ul`
     flex: 1;
 `;
 
+const lightText = '#fff';
+const darkenedText = darken(0.3, lightText);
+
 const SidebarListItemWrapper = styled.li`
-    color: ${Color.invertedText};
+    color: ${lightText};
     font-size: 24px;
     font-weight: bold;
     display: flex;
@@ -164,19 +175,25 @@ const Divider = styled.div`
     margin: 18px 0;
 `;
 
+
 const StyledLink = styled(Link)`
     display: flex;
     flex: 1;
     align-items: center;
     padding: 20px 20px;
-    color: ${Color.invertedText};
+    color: ${props => props.active ? lightText : darkenedText};
     text-decoration: none;
     :visited {
-        color: ${Color.invertedText};
+        color: ${props => props.active ? lightText : darkenedText};
     }
     :hover {
-        background-color: ${Color.sidebarHover}
+        background-color: ${Color.sidebarHover};
+        color: ${lightText};
     }
+
+    ${props => props.active && css`
+        background-color: ${Color.sidebarHover}
+    `}
 `;
 
 const SidebarIcon = styled.i`

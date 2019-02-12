@@ -11,6 +11,11 @@ export const DeviceEnums: {[DeviceEnumType]: DeviceEnumType} = {
   MOBILE: 'MOBILE'
 };
 
+export const AlertClasses: {[DeviceEnumType]: DeviceEnumType} = {
+  SUCCESS: 'SUCCESS',
+  ERROR: 'ERROR',
+  WARNING: 'WARNING'
+};
 
 // TODO - rewrite as styled components theme https://www.styled-components.com/docs/advanced
 
@@ -29,19 +34,18 @@ export const MainContent = styled.main`
   display: flex;
   flex: 1;
   justify-content: center;  
-  padding: ${props => props.device === DeviceEnums.MOBILE ? mobile.bodyPadding : web.bodyPadding}px;
-  padding: ${web.headerHeight + web.bodyPadding}px ${web.bodyPadding}px;
+  margin: ${web.headerHeight + web.bodyPadding}px ${web.bodyPadding}px;
   box-sizing: border-box;
   color: ${Color.primaryText};
-  font-size: 24px;
+  font-size: 1.5rem;
   z-index: 2;
 
   ${media.tablet`
-  padding: ${tablet.headerHeight + tablet.bodyPadding}px ${tablet.bodyPadding}px;
+  margin: ${tablet.headerHeight + tablet.bodyPadding}px ${tablet.bodyPadding}px;
   `}
 
   ${media.mobile`
-  padding: ${mobile.headerHeight + mobile.bodyPadding}px ${mobile.bodyPadding}px;
+  margin: ${mobile.headerHeight + mobile.bodyPadding}px ${mobile.bodyPadding}px;
   `}
 `;
 

@@ -8,15 +8,12 @@ export default class Carousel extends React.Component<{children: any}> {
   render() {
     const settings = {
         accessibility: true,
-        autoPlay: true,
-        variableWidth: true,
-        adaptiveHeight: true,
+        autoplay: true,
         infinite: true,
         dots: true,
-        infinite: true,
         speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 1
+        className: 'test-slide',
+        slidesToShow: 3
     };
     return (
         <Container>
@@ -29,5 +26,8 @@ export default class Carousel extends React.Component<{children: any}> {
 }
 
 const Container = styled.div`
+    display: block;
     max-width: 1300px;
+    min-height: 0px;
+    min-width: 0px;
 `;

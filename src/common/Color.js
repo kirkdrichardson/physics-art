@@ -16,7 +16,6 @@ const colors: {[color_property: string]: string} = {
   eggshell: '#D7CEB2',
   blue: 'blue',
   martinique: '#3D3A57',
-
   white: '#fafafa',
   lightGray: '#fff',
   mediumGray: '#eee',
