@@ -6,6 +6,8 @@ import {
   adjustHue
 } from 'polished';
 
+// This might be moved to a specfic flow doc attached
+// to readme
 // https://flow.org/en/docs/types/objects/#toc-objects-as-maps
 
 const colors: {[color_property: string]: string} = {
