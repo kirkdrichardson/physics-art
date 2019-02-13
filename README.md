@@ -19,5 +19,5 @@ This be a CRA bootstrap so the `yarn start` || `npm start` will open up your def
 ## Basic Code Formatting Params
 
 - single quotes are used throughout the code base
-  - an exception is in the scss files, which use double quotes
+  - an exception is in the css files, which use double quotes
 - tabs are used over spaces with a space width of 2
