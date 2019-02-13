@@ -1,25 +1,9 @@
 // @flow
 import styled from 'styled-components';
 
-import type { DeviceEnumType } from 'device';
-
 import Color from 'common/Color';
 import { web, tablet, mobile } from 'common/Style';
 import { media } from 'common/Breakpoints';
-
-export const DeviceEnums: {[DeviceEnumType]: DeviceEnumType} = {
-  DESKTOP: 'DESKTOP',
-  TABLET: 'TABLET',
-  MOBILE: 'MOBILE',
-};
-
-export const AlertClasses: {[DeviceEnumType]: DeviceEnumType} = {
-  SUCCESS: 'SUCCESS',
-  ERROR: 'ERROR',
-  WARNING: 'WARNING'
-};
-
-// TODO - rewrite as styled components theme https://www.styled-components.com/docs/advanced
 
 
 export const AppContainer = styled.div`

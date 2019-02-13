@@ -26,32 +26,13 @@ export const CardContainer = styled.div`
     `}
 
     ${props => props.tertiary && css`
-    max-width: 200px;
-    max-height: 100px;
-`}
+        max-width: 200px;
+        max-height: 100px;
+    `}
 
     background: purple;
 `;
 
 export const Header = styled.h1`
     font-size: 3rem;
-`;
-
-export const AlertBox = styled.div`
-  border-radius: 4px;
-  background-color: white;
-  width: 100%;
-  height: 50px;
-
-  ${props => props.error && css`
-    border: 1px solid red;
-  `}
-
-  ${props => props.success && css`
-    border: 1px solid green;
-  `}
-
-  ${props => props.warning && css`
-    border: 1px solid yellow;
-  `}
 `;

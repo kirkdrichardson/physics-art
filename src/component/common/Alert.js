@@ -1,85 +1,41 @@
 // @flow strict
 
-// import Color from 'common/Color';  update colors
-// import { media } from 'common/Breakpoints'; establish breakpoints
+import Color from 'common/Color';
+import { media } from 'common/Breakpoints';
 
 import * as React from 'react';
-// import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // Generic Wrapper declared in exports
-import { AlertBox } from 'common/styled/exports';
 
-type Props = RouterProps & {
-  routes: RouteType[],
+type AlertItemParams = {
   title: string,
-  type: AlertEnumType,
+  type: string,
   text: string
 };
 
-// stateless componenet handler declared
-// const SidebarListItem = ({title, type, text}: SidebarListItemParams): React.Node => (
+const Alert = ({title, type, text}: AlertItemParams): React.Node => (
+    <AlertBox success>
+        <h6>{`title`}</h6>
+        <p>{`text`}</p>
+    </AlertBox>
+);
 
-// ))
+export const AlertBox = styled.div`
+  border-radius: 4px;
+  background-color: ${Color.white};
 
-class Alert extends React.Component<Props> {
-    render() {
-        return (
-            <AlertBox {...Props.type}>
-                <h6>{Props.title}</h6>
-                <p>{Props.text}</p>
-            </AlertBox>
-        );
-    }
-}
+  ${props => props.error && css`
+    border: 1px solid ${Color.error};
+  `}
 
+  ${props => props.success && css`
+    border: 1px solid ${Color.success};
+  `}
 
-
-// const HeaderWrapper = styled.div`
-//     background: ${Color.headerBg};
-//     border-bottom: 1px solid ${Color.border};
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     left: 0;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     box-sizing: border-box;
-//     z-index: 99;
-//     height: ${web.headerHeight}px;
-    
-//     ${media.tablet`
-//     height: ${tablet.headerHeight}px;
-//     `}
-    
-    
-//     ${media.mobile`
-//     height: ${mobile.headerHeight}px;
-//     `}
-// `;
-
-// const SidebarWrapper = styled.div`
-//     position: absolute;
-//     left: 1rem;
-//     z-index: 999;
-// `;
-
-// const TitleWrapper = styled.div`
-//     display: flex;
-//     position: relative;
-//     flex-flow: row nowrap;
-//     justify-content: center;
-//     align-items: center;
-//     width: 100%;
-//     height: 100%;
-// `;
-
-
-// const Title = styled.h1`
-//     font-size: 2.1rem;
-//     color: ${Color.invertedText};
-//     margin: 0 1.5rem;
-// `;
-
+  ${props => props.warning && css`
+    border: 1px solid ${Color.warning};
+  `}
+`;
 
 export default Alert;

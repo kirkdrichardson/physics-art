@@ -9,7 +9,7 @@ class Test extends React.Component<Props> {
     render() {
         return (
             <div>
-                <Alert error/>
+                <Alert />
             </div>
         );
     }

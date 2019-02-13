@@ -3,7 +3,6 @@ import React from "react";
 import styled from 'styled-components';
 import Slider from "react-slick";
 
-
 export default class Carousel extends React.Component<{children: any}> {
   render() {
     const settings = {

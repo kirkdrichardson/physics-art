@@ -1,11 +1,8 @@
 // @flow
 
-// TODO - substitute faux enums for union type
+// no longer in use, but this is an example of a module
 
-declare module 'device' {
-    declare type DeviceEnumType = 'DESKTOP' | 'TABLET' | 'MOBILE';
-};
 
-declare module 'alert' {
-  declare type AlertEnumType = 'SUCCESS' | 'WARNING' | 'ERROR';
-};
+// declare module 'device' {
+//     declare type DeviceEnumType = 'DESKTOP' | 'TABLET' | 'MOBILE';
+// };

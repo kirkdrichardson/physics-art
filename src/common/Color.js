@@ -11,6 +11,7 @@ import {
 const colors: {[color_property: string]: string} = {
   red: 'red',
   green: '#93A8AC',
+  yellow: 'yellow',
   beige: '#A59E8C',
   wood: '#66635B',
   eggshell: '#D7CEB2',
@@ -59,6 +60,15 @@ const colors: {[color_property: string]: string} = {
   },
   get accent() {
     return this.green;
+  },
+  get success() {
+    return this.green;
+  },
+  get warning() {
+    return this.yellow;
+  },
+  get error () {
+    return this.red;
   }
 };
 
