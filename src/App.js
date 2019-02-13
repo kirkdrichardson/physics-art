@@ -17,7 +17,6 @@ import NoMatchingRoute from 'component/error/NoMatchingRoute';
 // import Color from 'common/Color';
 // import Style from 'common/Style';
 
-
 import {
   DeviceEnums,
   AppContainer,
@@ -43,7 +42,7 @@ const routes: RouteType[] = [
       name: 'Color',
       icon: 'palette'
     }
-},
+  },
   {
       path: '/shapes',
       component: Shapes,
@@ -79,9 +78,8 @@ const routes: RouteType[] = [
       name: 'Numbers',
       icon: 'all_inclusive'
     }
-}
+  }
 ];
-
 
 function App(props: RouterProps) {
   return (
@@ -105,7 +103,5 @@ function App(props: RouterProps) {
     </AppContainer>        
   );
 }
-
-
 
 export default App;

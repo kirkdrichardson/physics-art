@@ -8,9 +8,9 @@ import App from './App';
 // TODO - add additional auth logic
 
 function AppDelegate(props: RouterProps) {
-    return (
-        <App {...props} />      
-    );
+  return (
+    <App {...props} />      
+  );
 }
 
 export default withRouter(AppDelegate);
