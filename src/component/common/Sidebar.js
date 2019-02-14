@@ -1,6 +1,7 @@
 // @flow strict
 
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import { darken } from 'polished';
 import styled, {css} from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -25,7 +26,7 @@ type SidebarListItemParams = {
     active: boolean
 };
 
-const SidebarListItem = ({path, data, active}: SidebarListItemParams): React.Node => (
+const SidebarListItem = ({path, data, active}: SidebarListItemParams): Node => (
     <SidebarListItemWrapper>
         <StyledLink to={path} active={active ? 1 : 0}>
             <SidebarIcon className='material-icons'>{data.icon}</SidebarIcon>
@@ -34,8 +35,6 @@ const SidebarListItem = ({path, data, active}: SidebarListItemParams): React.Nod
     </SidebarListItemWrapper>
 );
 
-
-// used to toggle scroll
 
 class Sidebar extends React.Component<Props, State> {
     state = {

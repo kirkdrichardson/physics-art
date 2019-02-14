@@ -18,7 +18,6 @@ import NoMatchingRoute from 'component/error/NoMatchingRoute';
 // import Style from 'common/Style';
 
 import {
-  DeviceEnums,
   AppContainer,
   MainContent,
   Page
