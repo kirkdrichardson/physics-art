@@ -6,35 +6,26 @@ import { media } from 'common/Breakpoints';
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-// Generic Wrapper declared in exports
+type AlertEnumType = 'success' | 'warning' | 'error';
 
 type AlertItemParams = {
-  title: string,
-  type: string,
+  type: AlertEnumType,
   text: string
 };
 
-const Alert = ({title, type, text}: AlertItemParams): React.Node => (
-    <AlertBox success>
-        <h6>{`title`}</h6>
-        <p>{`text`}</p>
-    </AlertBox>
+const Alert = ({ type, text }: AlertItemParams): React.Node => (
+  <AlertBox type={ type }>
+    <h6>{ text }</h6>
+  </AlertBox>
 );
 
 export const AlertBox = styled.div`
+  text-align: center;
   border-radius: 4px;
   background-color: ${Color.white};
 
-  ${props => props.error && css`
-    border: 1px solid ${Color.error};
-  `}
-
-  ${props => props.success && css`
-    border: 1px solid ${Color.success};
-  `}
-
-  ${props => props.warning && css`
-    border: 1px solid ${Color.warning};
+  ${({ type }) => css`
+    border: 1px solid ${Color[type]};
   `}
 `;
 

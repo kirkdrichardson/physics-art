@@ -5,7 +5,6 @@ import Color from 'common/Color';
 import { web, tablet, mobile } from 'common/Style';
 import { media } from 'common/Breakpoints';
 
-
 export const AppContainer = styled.div`
   height: 100%;
   position: relative;
