@@ -9,6 +9,7 @@ import Shapes from 'component/shapes/Shapes';
 import Color from 'component/color/Color';
 import Motion from 'component/motion/Motion';
 import Systems from 'component/systems/Systems';
+import Test from 'component/test/Test';
 import Numbers from 'component/number/Numbers';
 import NoMatchingRoute from 'component/error/NoMatchingRoute';
 
@@ -25,13 +26,13 @@ import {
 
 const routes: RouteType[] = [
   {
-      path: '/',
-      component: Home,
-      exact: true,
-      sidebar: {
-        name: 'Home',
-        icon: 'home'
-      }
+    path: '/',
+    component: Home,
+    exact: true,
+    sidebar: {
+      name: 'Home',
+      icon: 'home'
+    }
   },
   {
     path: '/color',
@@ -43,31 +44,31 @@ const routes: RouteType[] = [
     }
   },
   {
-      path: '/shapes',
-      component: Shapes,
-      exact: true,
-      sidebar: {
-        name: 'Shapes',
-        icon: 'category'
-      }
+    path: '/shapes',
+    component: Shapes,
+    exact: true,
+    sidebar: {
+      name: 'Shapes',
+      icon: 'category'
+    }
   },
   {
-      path: '/motion',
-      component: Motion,
-      exact: true,
-      sidebar: {
-        name: 'Motion',
-        icon: 'swap_calls'
-      }
+    path: '/motion',
+    component: Motion,
+    exact: true,
+    sidebar: {
+      name: 'Motion',
+      icon: 'swap_calls'
+    }
   },
   {
-      path: '/systems',
-      component: Systems,
-      exact: true,
-      sidebar: {
-        name: 'Systems',
-        icon: 'grain'
-      }
+    path: '/systems',
+    component: Systems,
+    exact: true,
+    sidebar: {
+      name: 'Systems',
+      icon: 'grain'
+    }
   },
   {
     path: '/numbers',
