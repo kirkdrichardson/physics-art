@@ -8,6 +8,7 @@ import * as React from 'react';
 // import { media } from 'common/Breakpoints';
 
 import { Header } from 'common/styled/exports';
+import ModuleList from 'component/common/ModuleList';
 
 type Props = {||};
 
@@ -15,8 +16,8 @@ function Home(props: Props) {
     return (
         <div>
             <Header>Home</Header>
-
-        </div>
+            <ModuleList type='home' />
+        </div> 
     );
 }
 
