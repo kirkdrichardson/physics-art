@@ -12,6 +12,18 @@ import {
 
 const colors: {[color_property: string]: string} = {
   red: 'red',
+  warning: {
+    background: '#fff3cd',
+    border: '#856404'
+  },
+  error: {
+    background: '#f8d7da',
+    border: '#721c24'
+  },
+  success: {
+    background: '#d4edda',
+    border: '#155724'
+  },
   green: '#93A8AC',
   yellow: 'yellow',
   beige: '#A59E8C',
@@ -63,15 +75,24 @@ const colors: {[color_property: string]: string} = {
   get accent() {
     return this.green;
   },
-  get success() {
-    return this.green;
+  get warningBackground() {
+    return this.warning.background;
   },
-  get warning() {
-    return this.yellow;
+  get warningBorder() {
+    return this.warning.border;
   },
-  get error () {
-    return this.red;
-  }
+  get errorBackground() {
+    return this.error.background;
+  },
+  get errorBorder() {
+    return this.error.border;
+  },
+  get successBackground() {
+    return this.success.background;
+  },
+  get successBorder() {
+    return this.success.border;
+  },
 };
 
 export default colors;

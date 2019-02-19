@@ -27,13 +27,13 @@ import {
 
 const routes: RouteType[] = [
   {
-      path: '/',
-      component: Home,
-      exact: true,
-      sidebar: {
-        name: 'Home',
-        icon: 'home'
-      }
+    path: '/',
+    component: Home,
+    exact: true,
+    sidebar: {
+      name: 'Home',
+      icon: 'home'
+    }
   },
   {
     path: '/color',
@@ -45,31 +45,31 @@ const routes: RouteType[] = [
     }
   },
   {
-      path: '/shapes',
-      component: Shapes,
-      exact: true,
-      sidebar: {
-        name: 'Shapes',
-        icon: 'category'
-      }
+    path: '/shapes',
+    component: Shapes,
+    exact: true,
+    sidebar: {
+      name: 'Shapes',
+      icon: 'category'
+    }
   },
   {
-      path: '/motion',
-      component: Motion,
-      exact: true,
-      sidebar: {
-        name: 'Motion',
-        icon: 'swap_calls'
-      }
+    path: '/motion',
+    component: Motion,
+    exact: true,
+    sidebar: {
+      name: 'Motion',
+      icon: 'swap_calls'
+    }
   },
   {
-      path: '/systems',
-      component: Systems,
-      exact: true,
-      sidebar: {
-        name: 'Systems',
-        icon: 'grain'
-      }
+    path: '/systems',
+    component: Systems,
+    exact: true,
+    sidebar: {
+      name: 'Systems',
+      icon: 'grain'
+    }
   },
   {
     path: '/numbers',
@@ -78,15 +78,6 @@ const routes: RouteType[] = [
     sidebar: {
       name: 'Numbers',
       icon: 'all_inclusive'
-    }
-  },
-  {
-    path: '/test',
-    component: Test,
-    exact: true,
-    sidebar: {
-      name: 'Systems',
-      icon: 'test'
     }
   }
 ];

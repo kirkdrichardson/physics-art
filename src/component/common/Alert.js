@@ -10,25 +10,32 @@ type AlertEnumType = 'success' | 'warning' | 'error';
 
 type AlertItemParams = {
   type: AlertEnumType,
-  text: string,
-  title: string
+  text: string
 };
 
-const Alert = ({ type, text, title }: AlertItemParams): React.Node => (
+const Alert = ({ type, title, children }: AlertItemParams): React.Node => (
   <AlertBox type={ type }>
-    <h6 >{ title }</h6>
-    <p>{ text }</p>
+    <AlertBoxTitle>{ title }</AlertBoxTitle> 
+    <div>{ children }</div>
   </AlertBox>
 );
 
 export const AlertBox = styled.div`
-  text-align: center;
+  text-align: left;
   border-radius: 4px;
-  background-color: ${Color.white};
-
+  padding: 12px;
+  
   ${({ type }) => css`
-    border: 1px solid ${Color[type]};
+    background-color: ${Color[`${type}Background`]};
+    border-left: 3px solid ${Color[`${type}Border`]};
   `}
+`;
+
+export const AlertBoxTitle = styled.div`
+  padding-left: 1.2rem;
+  font-size: 0.8rem;
+  color: #000000e0;
+  margin-top: 0.3rem;
 `;
 
 export default Alert;
