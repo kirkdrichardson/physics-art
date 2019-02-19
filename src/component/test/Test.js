@@ -11,6 +11,7 @@ class Test extends React.Component<Props> {
       <div>
         <Alert 
           type={'warning'}
+          title={'You got a Warning!'}
           text={'Hello text'}
         />
       </div>

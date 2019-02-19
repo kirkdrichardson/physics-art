@@ -10,12 +10,14 @@ type AlertEnumType = 'success' | 'warning' | 'error';
 
 type AlertItemParams = {
   type: AlertEnumType,
-  text: string
+  text: string,
+  title: string
 };
 
-const Alert = ({ type, text }: AlertItemParams): React.Node => (
+const Alert = ({ type, text, title }: AlertItemParams): React.Node => (
   <AlertBox type={ type }>
-    <h6>{ text }</h6>
+    <h6 >{ title }</h6>
+    <p>{ text }</p>
   </AlertBox>
 );
 
